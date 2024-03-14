@@ -1,5 +1,6 @@
 using AutoMapper;
 using Cocktails.Application.CocktailsFeature;
+using Cocktails.Application.Common;
 using Cocktails.Application.FavoriteCocktailsFeature;
 using Cocktails.Domain;
 
