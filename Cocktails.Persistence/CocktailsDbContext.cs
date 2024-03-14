@@ -10,6 +10,12 @@ namespace Cocktails.Persistence
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CocktailsDbContext).Assembly);
+        }
+
         public DbSet<FavoriteCocktail> FavoriteCocktails { get; set; }
     }
 }

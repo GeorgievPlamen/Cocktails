@@ -1,4 +1,5 @@
 using AutoMapper;
+using Cocktails.Application.FavoriteCocktailsFeature.FavoritesValidator;
 using Cocktails.Application.Persistence.Contracts;
 using Cocktails.Domain;
 using MediatR;
@@ -19,7 +20,18 @@ namespace Cocktails.Application.FavoriteCocktailsFeature.Commands.CreateFavorite
         }
         public async Task<bool> Handle(CreateFavoriteCocktailCommand request, CancellationToken cancellationToken)
         {
+            if (request.Cocktail == null)
+                throw new ArgumentNullException(nameof(request.Cocktail));
+            var validator = new CreateFavoriteCocktailDTOValidator();
+            var validationResult = await validator.ValidateAsync(request.Cocktail);
+
+            if (validationResult.IsValid == false)
+            {
+                throw new Exception();
+            }
+
             var favoriteCocktail = _mapper.Map<FavoriteCocktail>(request.Cocktail);
+            favoriteCocktail.DateCreated = DateTime.UtcNow;
 
             return await _favoriteCocktailsRepository.Add(favoriteCocktail);
         }

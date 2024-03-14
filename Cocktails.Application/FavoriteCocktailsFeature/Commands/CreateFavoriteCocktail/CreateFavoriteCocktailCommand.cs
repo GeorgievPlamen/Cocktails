@@ -4,6 +4,11 @@ namespace Cocktails.Application.FavoriteCocktailsFeature.Commands.CreateFavorite
 {
     public class CreateFavoriteCocktailCommand : IRequest<bool>
     {
-        public CreateFavoriteCocktailDTO? Cocktail { get; set; }
+        public CreateFavoriteCocktailDTO? Cocktail { get; }
+
+        public CreateFavoriteCocktailCommand(CreateFavoriteCocktailDTO cocktail)
+        {
+            Cocktail = cocktail;
+        }
     }
 }

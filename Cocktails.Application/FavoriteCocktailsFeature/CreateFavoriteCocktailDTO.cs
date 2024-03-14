@@ -1,13 +1,18 @@
 using System.ComponentModel.DataAnnotations;
-using Cocktails.Application.Common;
 
 namespace Cocktails.Application.FavoriteCocktailsFeature
 {
     public class CreateFavoriteCocktailDTO
     {
         [Required]
+        public int Id { get; set; }
+        [Required]
+        [MinLength(5)]
+        [MaxLength(30)]
         public string? UserId { get; set; }
         [Required]
-        public CocktailDTO? Cocktail { get; set; }
+        public string? Name { get; set; }
+        [Required]
+        public string? ImageURL { get; set; }
     }
 }
