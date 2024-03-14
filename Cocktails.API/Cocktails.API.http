@@ -1,6 +1,5 @@
-@Cocktails.API_HostAddress = http://localhost:5116
+@Cocktails.API_HostAddress = http://localhost:5000
 
-GET {{Cocktails.API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###

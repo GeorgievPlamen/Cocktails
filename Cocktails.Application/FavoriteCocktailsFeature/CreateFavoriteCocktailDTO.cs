@@ -1,13 +1,13 @@
-
+using System.ComponentModel.DataAnnotations;
 using Cocktails.Application.Common;
 
 namespace Cocktails.Application.FavoriteCocktailsFeature
 {
-    public class FavoriteCocktailDTO
+    public class CreateFavoriteCocktailDTO
     {
-        public int Id { get; set; }
-        public DateTime DateCreated { get; set; }
+        [Required]
         public string? UserId { get; set; }
+        [Required]
         public CocktailDTO? Cocktail { get; set; }
     }
 }

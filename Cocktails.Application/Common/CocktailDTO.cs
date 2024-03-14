@@ -1,4 +1,4 @@
-namespace Cocktails.Application.CocktailsFeature
+namespace Cocktails.Application.Common
 {
     public class CocktailDTO
     {

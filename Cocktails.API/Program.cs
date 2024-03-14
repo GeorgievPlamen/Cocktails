@@ -1,6 +1,5 @@
 using Cocktails.Application;
 using Cocktails.Persistence;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +9,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-// builder.Services.AddApplicationServices();
+builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 
 var app = builder.Build();

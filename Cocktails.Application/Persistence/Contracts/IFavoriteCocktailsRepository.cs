@@ -5,8 +5,8 @@ namespace Cocktails.Application.Persistence.Contracts
     public interface IFavoriteCocktailsRepository
     {
         Task<FavoriteCocktail> Get(int id);
-        Task<List<FavoriteCocktail>> GetAll();
-        Task<bool> Add(FavoriteCocktail favorite);
-        Task<bool> Delete(FavoriteCocktail favorite);
+        Task<List<FavoriteCocktail>> GetAllByUser(string userId);
+        Task<bool> Add(FavoriteCocktail entity);
+        Task<bool> Delete(FavoriteCocktail entity);
     }
 }

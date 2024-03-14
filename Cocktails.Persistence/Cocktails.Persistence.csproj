@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cocktails.Infrastructure\Cocktails.Infrastructure.csproj" />
     <ProjectReference Include="..\Cocktails.Domain\Cocktails.Domain.csproj" />
+    <ProjectReference Include="..\Cocktails.Application\Cocktails.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>

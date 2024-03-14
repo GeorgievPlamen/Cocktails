@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cocktails.Persistence.Migrations
 {
-    [DbContext(typeof(CocktailsDb))]
+    [DbContext(typeof(CocktailsDbContext))]
     partial class CocktailsDbModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

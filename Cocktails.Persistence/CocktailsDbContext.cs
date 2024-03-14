@@ -3,9 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cocktails.Persistence
 {
-    public class CocktailsDb : DbContext
+    public class CocktailsDbContext : DbContext
     {
-        public CocktailsDb(DbContextOptions options) : base(options)
+        public CocktailsDbContext(DbContextOptions options)
+            : base(options)
         {
         }
 

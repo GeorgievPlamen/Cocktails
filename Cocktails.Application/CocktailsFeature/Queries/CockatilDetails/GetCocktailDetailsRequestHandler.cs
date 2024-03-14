@@ -4,12 +4,13 @@ using MediatR;
 
 namespace Cocktails.Application.CocktailsFeature.Queries.CockatilDetails
 {
-    public class GetCocktailDetailsHandler : IRequestHandler<GetCocktailDetailsRequest, CocktailDetailsDTO>
+    public class GetCocktailDetailsRequestHandler 
+        : IRequestHandler<GetCocktailDetailsRequest, CocktailDetailsDTO>
     {
         private readonly ICocktailRepository _cocktailsRepository;
         private readonly IMapper _mapper;
 
-        public GetCocktailDetailsHandler(
+        public GetCocktailDetailsRequestHandler(
             ICocktailRepository cocktailsRepository,
             IMapper mapper)
         {

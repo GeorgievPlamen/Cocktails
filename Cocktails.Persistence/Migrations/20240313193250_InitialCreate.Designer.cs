@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Cocktails.Persistence.Migrations
 {
-    [DbContext(typeof(CocktailsDb))]
+    [DbContext(typeof(CocktailsDbContext))]
     [Migration("20240313193250_InitialCreate")]
     partial class InitialCreate
     {
