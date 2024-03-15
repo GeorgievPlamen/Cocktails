@@ -26,9 +26,11 @@ namespace Cocktails.Application.FavoriteCocktailsFeature.Queries.FavoriteCocktai
                 throw new ArgumentNullException(nameof(request.UserId));
 
             var favoriteCocktails = await _favoriteCocktailsRepository
-                .GetAllByUser(request.UserId);
+                .GetAllByUserAsync(request.UserId);
 
-            return _mapper.Map<List<FavoriteCocktailDTO>>(favoriteCocktails);
+            var result = _mapper.Map<List<FavoriteCocktailDTO>>(favoriteCocktails);
+
+            return result;
         }
     }
 }

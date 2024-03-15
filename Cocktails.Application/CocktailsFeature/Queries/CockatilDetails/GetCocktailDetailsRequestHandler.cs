@@ -4,7 +4,7 @@ using MediatR;
 
 namespace Cocktails.Application.CocktailsFeature.Queries.CockatilDetails
 {
-    public class GetCocktailDetailsRequestHandler 
+    public class GetCocktailDetailsRequestHandler
         : IRequestHandler<GetCocktailDetailsRequest, CocktailDetailsDTO>
     {
         private readonly ICocktailRepository _cocktailsRepository;
@@ -21,9 +21,9 @@ namespace Cocktails.Application.CocktailsFeature.Queries.CockatilDetails
             GetCocktailDetailsRequest request,
             CancellationToken cancellationToken)
         {
-            var cocktail = await _cocktailsRepository.Get(request.Id);
+            var cocktail = await _cocktailsRepository.GetAsync(request.Id);
 
-            
+
             return _mapper.Map<CocktailDetailsDTO>(cocktail);
         }
     }

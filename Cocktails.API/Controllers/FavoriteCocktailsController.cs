@@ -19,11 +19,12 @@ namespace Cocktails.API.Controllers
         //Will get username from logged in users
         //Will require authentication
         [HttpGet]
-        public async Task<ActionResult<List<FavoriteCocktailDTO>>> GetFavorites()
+        public async Task<IActionResult> GetFavorites()
         {
             string username = "tester";
-            var favorites = await _mediator.Send(new GetFavoriteCocktailsByUserRequest(username));
-            return favorites;
+            var result = await _mediator.Send(new GetFavoriteCocktailsByUserRequest(username));
+
+            return result.Count < 1 ? NotFound() : Ok(result);
         }
 
         [HttpPost]

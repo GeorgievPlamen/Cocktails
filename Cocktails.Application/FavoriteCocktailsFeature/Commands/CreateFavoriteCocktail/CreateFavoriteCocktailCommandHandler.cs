@@ -21,19 +21,17 @@ namespace Cocktails.Application.FavoriteCocktailsFeature.Commands.CreateFavorite
         public async Task<bool> Handle(CreateFavoriteCocktailCommand request, CancellationToken cancellationToken)
         {
             if (request.Cocktail == null)
-                throw new ArgumentNullException(nameof(request.Cocktail));
+                return false;
             var validator = new CreateFavoriteCocktailDTOValidator();
             var validationResult = await validator.ValidateAsync(request.Cocktail);
 
             if (validationResult.IsValid == false)
-            {
-                throw new Exception();
-            }
+                return false;
 
             var favoriteCocktail = _mapper.Map<FavoriteCocktail>(request.Cocktail);
             favoriteCocktail.DateCreated = DateTime.UtcNow;
 
-            return await _favoriteCocktailsRepository.Add(favoriteCocktail);
+            return await _favoriteCocktailsRepository.AddAsync(favoriteCocktail);
         }
     }
 }

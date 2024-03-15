@@ -18,6 +18,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Cocktails.Application\Cocktails.Application.csproj" />
     <ProjectReference Include="..\Cocktails.Persistence\Cocktails.Persistence.csproj" />
+    <ProjectReference Include="..\Cocktails.Infrastructure\Cocktails.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

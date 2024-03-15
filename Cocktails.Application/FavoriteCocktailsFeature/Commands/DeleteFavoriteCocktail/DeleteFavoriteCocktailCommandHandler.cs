@@ -19,8 +19,8 @@ namespace Cocktails.Application.FavoriteCocktailsFeature.Commands.DeleteFavorite
         }
         public async Task<bool> Handle(DeleteFavoriteCocktailCommand request, CancellationToken cancellationToken)
         {
-            var cocktail = await _favoriteCocktailsRepository.Get(request.Id);
-            return await _favoriteCocktailsRepository.Delete(cocktail);
+            var cocktail = await _favoriteCocktailsRepository.GetAsync(request.Id);
+            return await _favoriteCocktailsRepository.DeleteAsync(cocktail);
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Cocktails.Application.Persistence.Contracts
 {
     public interface ICocktailRepository
     {
-        Task<CocktailDetails> Get(int id);
-        Task<List<Cocktail>> GetAllByAlcohol(AlcoholType alcoholType);
+        Task<CocktailDetails> GetAsync(int id);
+        Task<List<Cocktail>> GetAllByAlcoholAsync(AlcoholType alcoholType);
     }
 }

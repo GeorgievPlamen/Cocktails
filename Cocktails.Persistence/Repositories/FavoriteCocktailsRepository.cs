@@ -11,19 +11,19 @@ namespace Cocktails.Persistence.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task<bool> Add(FavoriteCocktail entity)
+        public async Task<bool> AddAsync(FavoriteCocktail entity)
         {
             await _dbContext.FavoriteCocktails.AddAsync(entity);
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> Delete(FavoriteCocktail entity)
+        public async Task<bool> DeleteAsync(FavoriteCocktail entity)
         {
             _dbContext.FavoriteCocktails.Remove(entity);
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<FavoriteCocktail> Get(int id)
+        public async Task<FavoriteCocktail> GetAsync(int id)
         {
             var cocktail = await _dbContext.FavoriteCocktails
                 .Where(x => x.Id == id)
@@ -32,7 +32,7 @@ namespace Cocktails.Persistence.Repositories
             return cocktail ?? throw new ArgumentNullException(nameof(cocktail));
         }
 
-        public async Task<List<FavoriteCocktail>> GetAllByUser(string userId)
+        public async Task<List<FavoriteCocktail>> GetAllByUserAsync(string userId)
         {
             var cocktails = await _dbContext.FavoriteCocktails
                 .Where(x => x.UserId == userId)
