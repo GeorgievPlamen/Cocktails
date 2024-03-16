@@ -13,6 +13,7 @@ namespace Cocktails.Infrastructure
             services.AddHttpClient();
             services.AddScoped<ICocktailApiGateway, CocktailApiGateway>();
             services.AddScoped<ICocktailsCache, CocktailsCache>();
+            services.AddMemoryCache();
 
             return services;
         }

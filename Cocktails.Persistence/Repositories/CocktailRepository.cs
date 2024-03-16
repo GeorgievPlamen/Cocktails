@@ -9,19 +9,33 @@ namespace Cocktails.Persistence.Repositories
     {
         private readonly ICocktailApiGateway _apiGateway;
         private readonly ICocktailsCache _cache;
+        private TimeSpan expirationTime = TimeSpan.FromDays(1);
         public CocktailRepository(ICocktailApiGateway apiGateway, ICocktailsCache cache)
         {
             _cache = cache;
             _apiGateway = apiGateway;
         }
-        public Task<CocktailDetails> GetAsync(int id)
+        public async Task<CocktailDetails> GetAsync(int id)
         {
-            throw new NotImplementedException();
+            CocktailDetails? result = await _cache.GetAsync(id);
+            if (result == null)
+            {
+                result = await _apiGateway.GetAsync(id);
+                await _cache.AddAsync(result, expirationTime);
+            }
+
+            return result;
         }
 
-        public Task<List<Cocktail>> GetAllByAlcoholAsync(AlcoholType alcoholType)
+        public async Task<List<Cocktail>> GetAllByAlcoholAsync(AlcoholType alcoholType)
         {
-            return _apiGateway.GetAllByAlcoholAsync(alcoholType);
+            var result = await _cache.GetAllByAlcoholAsync(alcoholType);
+            if (result == null)
+            {
+                result = await _apiGateway.GetAllByAlcoholAsync(alcoholType);
+                await _cache.AddAllByAlcoholAsync(alcoholType, result, expirationTime);
+            }
+            return result;
         }
     }
 }

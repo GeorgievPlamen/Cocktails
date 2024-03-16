@@ -23,7 +23,6 @@ namespace Cocktails.Application.CocktailsFeature.Queries.CockatilDetails
         {
             var cocktail = await _cocktailsRepository.GetAsync(request.Id);
 
-
             return _mapper.Map<CocktailDetailsDTO>(cocktail);
         }
     }
