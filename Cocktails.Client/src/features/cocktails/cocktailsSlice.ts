@@ -4,13 +4,11 @@ import { CocktailDetails } from "../../app/models/cocktailDetails";
 
 
 export interface Cocktails {
-    loading: boolean;
     cocktailsByType: Cocktail[];
     detailedCocktail: CocktailDetails | null;
 }
 
 const initialState: Cocktails = {
-    loading: false,
     cocktailsByType: [],
     detailedCocktail: null
 }
@@ -19,9 +17,7 @@ export const cocktailsSlice = createSlice({
     name: "game",
     initialState,
     reducers: {
-        toggleLoading: (state, action) => {
-            state.loading = action.payload;
-        },
+ 
         addCocktails: (state, action) => {
             state.cocktailsByType = action.payload;
         },
@@ -31,4 +27,4 @@ export const cocktailsSlice = createSlice({
     }
 })
 
-export const {toggleLoading,addCocktails,addDetailedCocktail} = cocktailsSlice.actions;
+export const {addCocktails,addDetailedCocktail} = cocktailsSlice.actions;
