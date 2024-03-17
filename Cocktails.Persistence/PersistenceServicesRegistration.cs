@@ -1,5 +1,3 @@
-using Cocktails.Application.Persistence.Contracts;
-using Cocktails.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,8 +14,6 @@ namespace Cocktails.Persistence
                 options.UseSqlite(
                    config.GetConnectionString("DefaultConnection")
                 ));
-            services.AddScoped<IFavoriteCocktailsRepository, FavoriteCocktailsRepository>();
-            services.AddScoped<ICocktailRepository, CocktailRepository>();
 
             return services;
         }

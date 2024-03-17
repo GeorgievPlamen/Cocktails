@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Cocktails.Domain\Cocktails.Domain.csproj" />
     <ProjectReference Include="..\Cocktails.Application\Cocktails.Application.csproj" />
     <ProjectReference Include="..\Cocktails.Persistence\Cocktails.Persistence.csproj" />
   </ItemGroup>

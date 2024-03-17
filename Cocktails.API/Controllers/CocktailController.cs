@@ -1,7 +1,7 @@
 using Cocktails.API.Controllers.Base;
 using Cocktails.Application.CocktailsFeature.Queries.CockatilDetails;
 using Cocktails.Application.CocktailsFeature.Queries.ListOfCockatilsByAlcohol;
-using Cocktails.Application.Persistence.Contracts.Enums;
+using Cocktails.Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

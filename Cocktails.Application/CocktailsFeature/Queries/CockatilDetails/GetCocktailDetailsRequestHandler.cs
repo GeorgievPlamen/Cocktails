@@ -1,5 +1,5 @@
 using AutoMapper;
-using Cocktails.Application.Persistence.Contracts;
+using Cocktails.Application.Interfaces;
 using MediatR;
 
 namespace Cocktails.Application.CocktailsFeature.Queries.CockatilDetails

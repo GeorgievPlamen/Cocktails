@@ -1,6 +1,6 @@
 using Cocktails.Domain;
 
-namespace Cocktails.Application.Persistence.Contracts
+namespace Cocktails.Application.Interfaces
 {
     public interface IFavoriteCocktailsRepository
     {

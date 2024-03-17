@@ -1,4 +1,4 @@
-using Cocktails.Application.Persistence.Contracts.Enums;
+using Cocktails.Domain.Enums;
 using MediatR;
 
 namespace Cocktails.Application.CocktailsFeature.Queries.ListOfCockatilsByAlcohol

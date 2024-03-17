@@ -1,6 +1,6 @@
-using Cocktails.Application.Persistence.Contracts.Enums;
 using Cocktails.Domain;
-using Cocktails.Persistence.Contracts;
+using Cocktails.Domain.Enums;
+using Cocktails.Infrastructure.Interfaces;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Cocktails.Infrastructure.Cache

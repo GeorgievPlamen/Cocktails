@@ -1,4 +1,4 @@
-namespace Cocktails.Application.Persistence.Contracts.Enums
+namespace Cocktails.Domain.Enums
 {
     public enum AlcoholType
     {

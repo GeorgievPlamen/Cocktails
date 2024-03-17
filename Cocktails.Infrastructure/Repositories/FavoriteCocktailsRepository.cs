@@ -1,8 +1,9 @@
-using Cocktails.Application.Persistence.Contracts;
+using Cocktails.Application.Interfaces;
 using Cocktails.Domain;
+using Cocktails.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace Cocktails.Persistence.Repositories
+namespace Cocktails.Infrastructure.Repositories
 {
     public class FavoriteCocktailsRepository : IFavoriteCocktailsRepository
     {

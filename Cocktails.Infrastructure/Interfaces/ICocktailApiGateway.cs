@@ -1,7 +1,7 @@
-using Cocktails.Application.Persistence.Contracts.Enums;
 using Cocktails.Domain;
+using Cocktails.Domain.Enums;
 
-namespace Cocktails.Persistence.Contracts
+namespace Cocktails.Infrastructure.Interfaces
 {
     public interface ICocktailApiGateway
     {

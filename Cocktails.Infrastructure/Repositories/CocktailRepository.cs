@@ -1,9 +1,10 @@
-using Cocktails.Application.Persistence.Contracts;
-using Cocktails.Application.Persistence.Contracts.Enums;
-using Cocktails.Domain;
-using Cocktails.Persistence.Contracts;
 
-namespace Cocktails.Persistence.Repositories
+using Cocktails.Application.Interfaces;
+using Cocktails.Domain;
+using Cocktails.Domain.Enums;
+using Cocktails.Infrastructure.Interfaces;
+
+namespace Cocktails.Infrastructure.Repositories
 {
     public class CocktailRepository : ICocktailRepository
     {

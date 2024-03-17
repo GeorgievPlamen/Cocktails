@@ -1,6 +1,6 @@
 using AutoMapper;
 using Cocktails.Application.FavoriteCocktailsFeature.FavoritesValidator;
-using Cocktails.Application.Persistence.Contracts;
+using Cocktails.Application.Interfaces;
 using Cocktails.Domain;
 using MediatR;
 

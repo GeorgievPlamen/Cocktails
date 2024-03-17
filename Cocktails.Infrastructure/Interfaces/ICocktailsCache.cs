@@ -1,7 +1,8 @@
-using Cocktails.Application.Persistence.Contracts.Enums;
-using Cocktails.Domain;
 
-namespace Cocktails.Persistence.Contracts
+using Cocktails.Domain;
+using Cocktails.Domain.Enums;
+
+namespace Cocktails.Infrastructure.Interfaces
 {
     public interface ICocktailsCache
     {
