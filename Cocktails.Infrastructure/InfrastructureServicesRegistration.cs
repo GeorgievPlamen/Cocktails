@@ -1,5 +1,6 @@
 using Cocktails.Application.Interfaces;
 using Cocktails.Infrastructure.APIGateway;
+using Cocktails.Infrastructure.Authentication;
 using Cocktails.Infrastructure.Cache;
 using Cocktails.Infrastructure.Interfaces;
 using Cocktails.Infrastructure.Repositories;
@@ -17,6 +18,8 @@ namespace Cocktails.Infrastructure
             services.AddHttpClient();
             services.AddScoped<ICocktailApiGateway, CocktailApiGateway>();
             services.AddScoped<ICocktailsCache, CocktailsCache>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
             services.AddMemoryCache();
 
             return services;

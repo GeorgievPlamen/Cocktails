@@ -106,17 +106,7 @@ namespace Cocktails.Persistence.Configuration
                     UserId = "tester",
                     Name = "Third Bloody Mary",
                     ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066"
-                }
-                ,
-                new FavoriteCocktail
-                {
-                    Id = 111,
-                    DateCreated = DateTime.UtcNow,
-                    UserId = "111",
-                    Name = "Final test drink",
-                    ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066"
-                }
-                );
+                });
         }
     }
 }

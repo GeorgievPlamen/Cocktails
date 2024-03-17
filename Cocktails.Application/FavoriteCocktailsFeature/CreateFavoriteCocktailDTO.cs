@@ -7,12 +7,13 @@ namespace Cocktails.Application.FavoriteCocktailsFeature
         [Required]
         public int Id { get; set; }
         [Required]
-        [MinLength(5)]
-        [MaxLength(30)]
+        [Range(15, 30)]
         public string? UserId { get; set; }
         [Required]
+        [MaxLength(50)]
         public string? Name { get; set; }
         [Required]
+        [MaxLength(100)]
         public string? ImageURL { get; set; }
     }
 }

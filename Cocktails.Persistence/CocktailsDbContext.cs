@@ -1,9 +1,10 @@
 using Cocktails.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cocktails.Persistence
 {
-    public class CocktailsDbContext : DbContext
+    public class CocktailsDbContext : IdentityDbContext
     {
         public CocktailsDbContext(DbContextOptions options)
             : base(options)
