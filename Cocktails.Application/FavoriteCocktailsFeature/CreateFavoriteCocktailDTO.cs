@@ -7,7 +7,7 @@ namespace Cocktails.Application.FavoriteCocktailsFeature
         [Required]
         public int Id { get; set; }
         [Required]
-        [Range(15, 30)]
+        [MaxLength(50)]
         public string? UserId { get; set; }
         [Required]
         [MaxLength(50)]
