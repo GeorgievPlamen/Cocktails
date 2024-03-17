@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cocktails.Persistence.Migrations
 {
     [DbContext(typeof(CocktailsDbContext))]
-    [Migration("20240317083735_InitialCreate")]
+    [Migration("20240317085807_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -46,90 +46,90 @@ namespace Cocktails.Persistence.Migrations
                         new
                         {
                             Id = 100,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1266),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9952),
                             ImageURL = "https://www.liquor.com/thmb/V5L3hv-w8ph2_RQi_-simg-4Ris=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Frozen-Margarita-1500x1500-hero-191e49b3ab4f4781b93f3cfacac25136.jpg",
                             Name = "Margarita",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 101,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1268),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9955),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Bloody Mary",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 102,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1269),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9956),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Test2",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 103,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1270),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9957),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Bloody Mary",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 104,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1270),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9958),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Some Drink",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 105,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1271),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9958),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Fifth one",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 106,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1272),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9959),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Testing 6th",
-                            UserId = "tester"
+                            UserId = "ee19ebca-901a-4ce9-a435-6b074db12f9f"
                         },
                         new
                         {
                             Id = 107,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1273),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9960),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Another Margarita",
-                            UserId = "tester"
+                            UserId = "a9dc8882-1d14-493a-9e18-2c604d043c8b"
                         },
                         new
                         {
                             Id = 108,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1273),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9961),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Third Margarita",
-                            UserId = "tester"
+                            UserId = "a9dc8882-1d14-493a-9e18-2c604d043c8b"
                         },
                         new
                         {
                             Id = 109,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1274),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9962),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Fourth Margarita",
-                            UserId = "tester"
+                            UserId = "a9dc8882-1d14-493a-9e18-2c604d043c8b"
                         },
                         new
                         {
                             Id = 110,
-                            DateCreated = new DateTime(2024, 3, 17, 8, 37, 35, 360, DateTimeKind.Utc).AddTicks(1275),
+                            DateCreated = new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9963),
                             ImageURL = "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066",
                             Name = "Third Bloody Mary",
-                            UserId = "tester"
+                            UserId = "a9dc8882-1d14-493a-9e18-2c604d043c8b"
                         });
                 });
 
@@ -250,15 +250,15 @@ namespace Cocktails.Persistence.Migrations
                         {
                             Id = "ee19ebca-901a-4ce9-a435-6b074db12f9f",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "579c78f7-91c0-4c24-8fb7-4cbf18fdf5bc",
+                            ConcurrencyStamp = "31179899-eabc-4f85-bd46-4c36021f0e2d",
                             Email = "john@test.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "JOHN@TEST.COM",
                             NormalizedUserName = "JOHN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEG08fkurUP+u4TXed+SrxYbvdPPOwnabv614bgY2poA9SLmiDH/d1/DEC7rgEu8nQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN+qs11gZb4JWgvp1wCUVFv6lvykvK5jQUD+qQazni0N9RAW8hOhHUL0SC5RTlQuyg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "b5280ea3-b8e1-4bc6-a000-b052e3241f8a",
+                            SecurityStamp = "8568c1a6-db21-48a7-9ae3-ee66e2215100",
                             TwoFactorEnabled = false,
                             UserName = "John"
                         },
@@ -266,15 +266,15 @@ namespace Cocktails.Persistence.Migrations
                         {
                             Id = "a9dc8882-1d14-493a-9e18-2c604d043c8b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ab14719b-4a2b-4aa9-9553-78e82bd3b8e4",
+                            ConcurrencyStamp = "9640df15-11ab-493d-8823-b1cdbc65ea06",
                             Email = "jane@test.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "JANE@TEST.COM",
                             NormalizedUserName = "JANE",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBJy0rwII+yCmiGJxDbMcRVheQgTC0UZ9dkoC9L8dhWLbVY66ZKdCUiQ2iUFDXz+Gg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDz7hxDANpwCPAzx96ElUl62b+0IrikjZjAYYLpEFYmNReNhfBhaM++CWeVxN3UXqg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "d084227e-181a-4239-8924-1618309dabad",
+                            SecurityStamp = "57f1215e-97b8-46b5-8846-aaebb6e26c66",
                             TwoFactorEnabled = false,
                             UserName = "Jane"
                         });

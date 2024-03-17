@@ -12,7 +12,7 @@ namespace Cocktails.Persistence.Configuration
             builder.HasData(
                 new IdentityUser
                 {
-                    Id = Guid.NewGuid().ToString(),
+                    Id = "ee19ebca-901a-4ce9-a435-6b074db12f9f",
                     UserName = "John",
                     NormalizedUserName = "JOHN",
                     Email = "john@test.com",
@@ -21,7 +21,7 @@ namespace Cocktails.Persistence.Configuration
                 },
                 new IdentityUser
                 {
-                    Id = Guid.NewGuid().ToString(),
+                    Id = "a9dc8882-1d14-493a-9e18-2c604d043c8b",
                     UserName = "Jane",
                     NormalizedUserName = "JANE",
                     Email = "jane@test.com",

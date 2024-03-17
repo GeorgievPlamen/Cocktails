@@ -6,5 +6,6 @@ namespace Cocktails.Application.Interfaces
     {
         Task<User?> LoginUserAsync(string email, string password);
         Task<User?> AddAsync(User user);
+        Task<User> GetUserByEmailAsync(string email);
     }
 }

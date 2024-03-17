@@ -12,6 +12,7 @@ namespace Cocktails.Infrastructure.Repositories
         {
             _userManager = userManager;
         }
+
         public async Task<User?> AddAsync(User user)
         {
             if (await _userManager.Users.AnyAsync(u => u.Email == user.Email))
@@ -46,7 +47,7 @@ namespace Cocktails.Infrastructure.Repositories
             return await GetUserByEmailAsync(email);
         }
 
-        private async Task<User> GetUserByEmailAsync(string email)
+        public async Task<User> GetUserByEmailAsync(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
 
