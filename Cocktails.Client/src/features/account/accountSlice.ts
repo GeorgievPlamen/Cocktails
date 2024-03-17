@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createAsyncThunk, createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import { User } from "../../app/models/user";
 import agent from "../../app/api/agent";
 import { FieldValues } from "react-hook-form";
@@ -8,12 +8,10 @@ import { router } from "../../app/router/routes";
 
 export interface AccountState {
     user: User | null;
-    username: string | null;
 }
 
 const initialState: AccountState = {
-    user: null,
-    username: null
+    user: null
 }
 
 export const signInUser = createAsyncThunk<User, FieldValues>(
@@ -40,17 +38,8 @@ export const accountSlice = createSlice({
         },
         setUser: (state, action) => {
             state.user = action.payload;
-        },
-        setUsername: (state, action) => {
-            state.username = action.payload;
         }
-    },
-    extraReducers: (builder => {
-        builder.addMatcher(isAnyOf(signInUser.rejected),
-        (_state, action) => {
-            console.log(action.payload)
-        })
-    })
+    }
 })
 
-export const {logOut,setUser, setUsername} = accountSlice.actions;
+export const {logOut,setUser} = accountSlice.actions;

@@ -12,7 +12,6 @@ import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
 import agent from "../../app/api/agent";
 import { toast } from "react-toastify";
-import Navbar from "../../app/layout/Navbar";
 
 export default function Register() {
   const nav = useNavigate();
@@ -48,7 +47,6 @@ export default function Register() {
       alignItems={"center"}
       justifyContent={"center"}
     >
-      <Navbar />
       <Card
         sx={{
           minWidth: 275,
