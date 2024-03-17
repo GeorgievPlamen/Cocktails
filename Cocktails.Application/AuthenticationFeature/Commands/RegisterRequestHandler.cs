@@ -24,9 +24,6 @@ namespace Cocktails.Application.AuthenticationFeature.Commands
             if (request.RegisterDTO == null || request.RegisterDTO.Email == null)
                 throw new ArgumentNullException(nameof(request.RegisterDTO));
 
-            if (await _userRepository.GetUserByEmailAsync(request.RegisterDTO.Email) != null)
-                throw new ArgumentException("Email already used");
-
             var user = new User
             {
                 Name = request.RegisterDTO.Name,

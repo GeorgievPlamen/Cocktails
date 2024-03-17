@@ -14,14 +14,18 @@ namespace Cocktails.Persistence.Configuration
                 {
                     Id = Guid.NewGuid().ToString(),
                     UserName = "John",
-                    Email = "johnTester@test.com",
+                    NormalizedUserName = "JOHN",
+                    Email = "john@test.com",
+                    NormalizedEmail = "JOHN@TEST.COM",
                     PasswordHash = hasher.HashPassword(null!, "Pa$$w0rd")
                 },
                 new IdentityUser
                 {
                     Id = Guid.NewGuid().ToString(),
-                    UserName = "ane",
-                    Email = "janeTester@test.com",
+                    UserName = "Jane",
+                    NormalizedUserName = "JANE",
+                    Email = "jane@test.com",
+                    NormalizedEmail = "JANE@TEST.COM",
                     PasswordHash = hasher.HashPassword(null!, "Pa$$w0rd")
                 }
             );
