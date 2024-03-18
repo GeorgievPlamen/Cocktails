@@ -1,15 +1,16 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { toast } from "react-toastify";
+import { store } from "../store/configureStore";
 
 axios.defaults.baseURL = "http://localhost:5000/api/";
 
 const responseBody = (response: AxiosResponse) => response.data;
 
-// axios.interceptors.request.use(config => {
-//     const token = store.getState().account.user?.token;
-//     if (token) config.headers.Authorization = `Bearer ${token}`;
-//     return config;
-// })
+axios.interceptors.request.use(config => {
+    const token = store.getState().account.user?.token;
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
 
 axios.interceptors.response.use( async response => {
     return response;
@@ -40,12 +41,6 @@ const requests = {
     get: (url: string, params?: URLSearchParams) => axios.get(url, {params}).then(responseBody),
     post: (url: string, body: object) => axios.post(url, body).then(responseBody),
     delete: (url: string) => axios.delete(url).then(responseBody),
-    postForm: (url: string, data: FormData) => axios.post(url, data, {
-        headers: {"Content-type": "multipart/form-data"}
-    }).then(responseBody),
-    putForm: (url: string, data: FormData) => axios.put(url, data, {
-        headers: {"Content-type": "multipart/form-data"}
-    }).then(responseBody)
 }
 
 const Cocktail = {

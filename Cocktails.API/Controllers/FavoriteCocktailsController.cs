@@ -4,10 +4,12 @@ using Cocktails.Application.FavoriteCocktailsFeature.Commands.CreateFavoriteCock
 using Cocktails.Application.FavoriteCocktailsFeature.Commands.DeleteFavoriteCocktail;
 using Cocktails.Application.FavoriteCocktailsFeature.Queries.FavoriteCocktailsByUser;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cocktails.API.Controllers
 {
+    [Authorize]
     public class FavoriteCocktailsController : BaseController
     {
         private readonly IMediator _mediator;

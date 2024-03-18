@@ -33,8 +33,8 @@ app.UseCors(options =>
         .WithOrigins("http://localhost:3000");
 });
 
-app.UseAuthorization();
 app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

@@ -3,10 +3,12 @@ using Cocktails.Application.CocktailsFeature.Queries.CockatilDetails;
 using Cocktails.Application.CocktailsFeature.Queries.ListOfCockatilsByAlcohol;
 using Cocktails.Domain.Enums;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cocktails.API.Controllers
 {
+    [Authorize]
     public class CocktailController : BaseController
     {
         private readonly IMediator _mediator;
