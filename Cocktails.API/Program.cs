@@ -2,6 +2,7 @@ using Cocktails.Application;
 using Cocktails.Persistence;
 using Cocktails.Infrastructure;
 using Cocktails.API.Middleware;
+using Cocktails.API.GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddPersistenceServices(builder.Configuration);
-
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Query>()
+    .AddMutationType<Mutations>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,6 +40,7 @@ app.UseCors(options =>
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapGraphQL();
 app.MapControllers();
 
 app.Run();
