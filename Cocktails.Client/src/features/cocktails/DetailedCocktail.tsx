@@ -12,7 +12,8 @@ export default function DetailedCocktail() {
   const user = useAppSelector((state) => state.account.user);
 
   const favorite: Favorite = {
-    id: cocktailWithDetails?.id,
+    id: undefined,
+    cocktailId: cocktailWithDetails?.id,
     userId: user?.id,
     name: cocktailWithDetails?.name,
     imageURL: cocktailWithDetails?.imageURL,

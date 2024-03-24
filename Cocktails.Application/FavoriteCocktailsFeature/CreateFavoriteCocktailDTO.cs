@@ -5,7 +5,7 @@ namespace Cocktails.Application.FavoriteCocktailsFeature
     public class CreateFavoriteCocktailDTO
     {
         [Required]
-        public int Id { get; set; }
+        public int CocktailId { get; set; }
         [Required]
         [MaxLength(50)]
         public string? UserId { get; set; }

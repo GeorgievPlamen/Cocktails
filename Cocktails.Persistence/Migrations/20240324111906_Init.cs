@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Cocktails.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -59,6 +59,7 @@ namespace Cocktails.Persistence.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     DateCreated = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    CocktailId = table.Column<int>(type: "INTEGER", nullable: false),
                     UserId = table.Column<string>(type: "TEXT", nullable: true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     ImageURL = table.Column<string>(type: "TEXT", nullable: true)
@@ -179,26 +180,26 @@ namespace Cocktails.Persistence.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "a9dc8882-1d14-493a-9e18-2c604d043c8b", 0, "9640df15-11ab-493d-8823-b1cdbc65ea06", "jane@test.com", false, false, null, "JANE@TEST.COM", "JANE", "AQAAAAIAAYagAAAAEDz7hxDANpwCPAzx96ElUl62b+0IrikjZjAYYLpEFYmNReNhfBhaM++CWeVxN3UXqg==", null, false, "57f1215e-97b8-46b5-8846-aaebb6e26c66", false, "Jane" },
-                    { "ee19ebca-901a-4ce9-a435-6b074db12f9f", 0, "31179899-eabc-4f85-bd46-4c36021f0e2d", "john@test.com", false, false, null, "JOHN@TEST.COM", "JOHN", "AQAAAAIAAYagAAAAEN+qs11gZb4JWgvp1wCUVFv6lvykvK5jQUD+qQazni0N9RAW8hOhHUL0SC5RTlQuyg==", null, false, "8568c1a6-db21-48a7-9ae3-ee66e2215100", false, "John" }
+                    { "a9dc8882-1d14-493a-9e18-2c604d043c8b", 0, "c201f609-8bae-4593-bc84-ddcb337c5e91", "jane@test.com", false, false, null, "JANE@TEST.COM", "JANE", "AQAAAAIAAYagAAAAEFurvpus4koap3XJ+hgApBW0ldQQWgyhogI7NYKeK3S+m/MzBInK4LMtKueiIOxp5A==", null, false, "86e5503d-e6eb-40a3-99b6-a0549da71976", false, "Jane" },
+                    { "ee19ebca-901a-4ce9-a435-6b074db12f9f", 0, "c97d323f-1a88-4615-a24a-c5275e29449c", "john@test.com", false, false, null, "JOHN@TEST.COM", "JOHN", "AQAAAAIAAYagAAAAECHR/9NuWnF7y4CPK5SlpKpsO3uP842b1V0JMY3HBJjBaASUc+yq9O1uAxqW0paogg==", null, false, "dfe41b09-9f88-4a6b-aaeb-5ac575983715", false, "John" }
                 });
 
             migrationBuilder.InsertData(
                 table: "FavoriteCocktails",
-                columns: new[] { "Id", "DateCreated", "ImageURL", "Name", "UserId" },
+                columns: new[] { "Id", "CocktailId", "DateCreated", "ImageURL", "Name", "UserId" },
                 values: new object[,]
                 {
-                    { 100, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9952), "https://www.liquor.com/thmb/V5L3hv-w8ph2_RQi_-simg-4Ris=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Frozen-Margarita-1500x1500-hero-191e49b3ab4f4781b93f3cfacac25136.jpg", "Margarita", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 101, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9955), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Bloody Mary", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 102, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9956), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Test2", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 103, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9957), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Bloody Mary", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 104, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9958), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Some Drink", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 105, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9958), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Fifth one", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 106, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9959), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Testing 6th", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
-                    { 107, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9960), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Another Margarita", "a9dc8882-1d14-493a-9e18-2c604d043c8b" },
-                    { 108, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9961), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Third Margarita", "a9dc8882-1d14-493a-9e18-2c604d043c8b" },
-                    { 109, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9962), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Fourth Margarita", "a9dc8882-1d14-493a-9e18-2c604d043c8b" },
-                    { 110, new DateTime(2024, 3, 17, 8, 58, 7, 368, DateTimeKind.Utc).AddTicks(9963), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Third Bloody Mary", "a9dc8882-1d14-493a-9e18-2c604d043c8b" }
+                    { 100, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5814), "https://www.liquor.com/thmb/V5L3hv-w8ph2_RQi_-simg-4Ris=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Frozen-Margarita-1500x1500-hero-191e49b3ab4f4781b93f3cfacac25136.jpg", "Margarita", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 101, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5823), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Bloody Mary", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 102, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5825), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Test2", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 103, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5826), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Bloody Mary", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 104, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5826), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Some Drink", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 105, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5827), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Fifth one", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 106, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5828), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Testing 6th", "ee19ebca-901a-4ce9-a435-6b074db12f9f" },
+                    { 107, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5829), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Another Margarita", "a9dc8882-1d14-493a-9e18-2c604d043c8b" },
+                    { 108, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5830), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Third Margarita", "a9dc8882-1d14-493a-9e18-2c604d043c8b" },
+                    { 109, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5831), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Fourth Margarita", "a9dc8882-1d14-493a-9e18-2c604d043c8b" },
+                    { 110, 111, new DateTime(2024, 3, 24, 11, 19, 5, 356, DateTimeKind.Utc).AddTicks(5832), "https://img.jamieoliver.com/jamieoliver/recipe-database/oldImages/large/1202_1_1439206245.jpg?tr=w-800,h-1066", "Third Bloody Mary", "a9dc8882-1d14-493a-9e18-2c604d043c8b" }
                 });
 
             migrationBuilder.CreateIndex(
