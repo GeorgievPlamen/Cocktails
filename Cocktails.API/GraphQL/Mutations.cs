@@ -3,7 +3,6 @@ using Cocktails.Application.AuthenticationFeature.Commands;
 using Cocktails.Application.FavoriteCocktailsFeature;
 using Cocktails.Application.FavoriteCocktailsFeature.Commands.CreateFavoriteCocktail;
 using Cocktails.Application.FavoriteCocktailsFeature.Commands.DeleteFavoriteCocktail;
-using HotChocolate;
 using MediatR;
 
 namespace Cocktails.API.GraphQL;

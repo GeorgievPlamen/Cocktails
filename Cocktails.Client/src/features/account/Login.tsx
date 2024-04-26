@@ -29,7 +29,6 @@ export default function Login() {
   async function submitForm(data: FieldValues) {
     try {
       const actionResult = await dispatch(signInUser(data));
-
       if (signInUser.fulfilled.match(actionResult)) {
         toast.success("Login Successfull");
         dispatch(setUser(actionResult.payload));
@@ -86,8 +85,8 @@ export default function Login() {
                     {...register("email", {
                       required: "Email is required",
                     })}
-                    error={!!errors.username}
-                    helperText={errors.username?.message as string}
+                    error={!!errors.email}
+                    helperText={errors.email?.message as string}
                   />
                   <TextField
                     margin="normal"

@@ -89,8 +89,8 @@ export default function Register() {
                 {...register("name", {
                   required: "Name is required",
                 })}
-                error={!!errors.username}
-                helperText={errors.username?.message as string}
+                error={!!errors.name}
+                helperText={errors.name?.message as string}
               />
               <TextField
                 margin="normal"

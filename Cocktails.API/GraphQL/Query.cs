@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Cocktails.Application.AuthenticationFeature;
 using Cocktails.Application.AuthenticationFeature.Queries;
 using Cocktails.Application.CocktailsFeature;
@@ -6,7 +7,7 @@ using Cocktails.Application.CocktailsFeature.Queries.ListOfCockatilsByAlcohol;
 using Cocktails.Application.FavoriteCocktailsFeature;
 using Cocktails.Application.FavoriteCocktailsFeature.Queries.FavoriteCocktailsByUser;
 using Cocktails.Domain.Enums;
-using HotChocolate;
+using HotChocolate.Authorization;
 using MediatR;
 
 namespace Cocktails.API.GraphQL;
@@ -21,7 +22,9 @@ public class Query
     {
         return await mediator.Send(new GetCocktailDetailsRequest(id));
     }
-    public async Task<List<CocktailDTO>> GetByAlcohol([Service] IMediator mediator, AlcoholType alcoholType)
+    [UsePaging]
+    [Authorize]
+    public async Task<List<CocktailDTO>> GetByAlcohol([Service] IMediator mediator, AlcoholType alcoholType, ClaimsPrincipal? claimsPrincipal)
     {
         return await mediator.Send(new ListByAlcoholRequest(alcoholType));
     }

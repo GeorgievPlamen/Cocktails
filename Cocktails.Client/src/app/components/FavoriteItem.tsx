@@ -51,7 +51,7 @@ export default function FavoriteItem({ favorite }: Props) {
       </Typography>
       <Box>
         <LoadingButton onClick={() => del(favorite.id!)}>Delete</LoadingButton>
-        <LoadingButton onClick={() => submit(favorite.id!)}>
+        <LoadingButton onClick={() => submit(favorite.cocktailId!)}>
           Details
         </LoadingButton>
       </Box>
