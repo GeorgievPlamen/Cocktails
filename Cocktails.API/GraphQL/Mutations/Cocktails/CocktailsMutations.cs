@@ -1,13 +1,13 @@
-using Cocktails.Application.AuthenticationFeature;
-using Cocktails.Application.AuthenticationFeature.Commands;
+using Cocktails.API.GraphQL.Base;
 using Cocktails.Application.FavoriteCocktailsFeature;
 using Cocktails.Application.FavoriteCocktailsFeature.Commands.CreateFavoriteCocktail;
 using Cocktails.Application.FavoriteCocktailsFeature.Commands.DeleteFavoriteCocktail;
 using MediatR;
 
-namespace Cocktails.API.GraphQL;
+namespace Cocktails.API.GraphQL.Mutations.Cocktails;
 
-public class Mutations
+[ExtendObjectType<Mutation>]
+public class CocktailsMutation
 {
     public async Task<bool> RemoveFavorites([Service] IMediator mediator, int id)
     {
@@ -16,10 +16,5 @@ public class Mutations
     public async Task<bool> AddFavorite([Service] IMediator mediator, CreateFavoriteCocktailDTO cocktail)
     {
         return await mediator.Send(new CreateFavoriteCocktailCommand(cocktail));
-    }
-
-    public async Task<UserDTO?> RegisterUser([Service] IMediator mediator, RegisterDTO register)
-    {
-        return await mediator.Send(new RegisterRequest(register));
     }
 }

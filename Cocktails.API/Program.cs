@@ -3,6 +3,11 @@ using Cocktails.Persistence;
 using Cocktails.Infrastructure;
 using Cocktails.API.Middleware;
 using Cocktails.API.GraphQL;
+using Cocktails.API.GraphQL.Queries.CocktailsQueries;
+using Cocktails.API.GraphQL.Queries.UserQuery;
+using Cocktails.API.GraphQL.Base;
+using Cocktails.API.GraphQL.Mutations.User;
+using Cocktails.API.GraphQL.Mutations.Cocktails;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +24,12 @@ builder.Services
     .AddGraphQLServer()
     .AddAuthorization()
     .AddQueryType<Query>()
-    .AddMutationType<Mutations>();
+    .AddTypeExtension<UserQuery>()
+    .AddTypeExtension<CocktailQueries>()
+    .AddMutationType<Mutation>()
+    .AddTypeExtension<UserMutations>()
+    .AddTypeExtension<CocktailsMutation>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
